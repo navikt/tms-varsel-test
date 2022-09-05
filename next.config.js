@@ -7,7 +7,7 @@ const sentryWebpackPluginOptions = {
 };
 
 const nextConfig = {
-  basePath: '/aap/innsyn',
+  basePath: '/tms-varsel-test',
   trailingSlash: true,
   reactStrictMode: true,
   output: 'standalone',
