@@ -1,0 +1,7 @@
+ingresses:
+  - "https://tms-varsel-test.dev.nav.no"
+env:
+  - name: APP_URL
+    value: "https://tms-varsel-test.dev.nav.no"
+externals:
+  - "dekoratoren.dev.nav.no"
