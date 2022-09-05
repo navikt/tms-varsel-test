@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - "main"
+      - "setup"
 env:
   "IMAGE": "ghcr.io/${{ github.repository }}:${{ github.sha }}"
 jobs:
