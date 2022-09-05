@@ -32,7 +32,7 @@ spec:
       autoLogin: true
       level: Level4
   ingresses:
-    - "https://www.dev.nav.no"
+    - "https://person.dev.nav.no"
   tokenx:
     enabled: true
   accessPolicy:
