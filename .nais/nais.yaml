@@ -32,7 +32,7 @@ spec:
       autoLogin: true
       level: Level4
   ingresses:
-    - "https://person.dev.nav.no"
+    - "https://www.dev.nav.no/tms-varsel-test"
   tokenx:
     enabled: true
   accessPolicy:
