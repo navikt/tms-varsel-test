@@ -1,5 +1,6 @@
 import { Heading } from '@navikt/ds-react';
 import { useFeatureToggleIntl } from '../../hooks/useFeatureToggleIntl';
+import Varselbjelle from "./Varselbjelle";
 import styles from './AppHeader.module.css';
 
 export const AppHeader = () => {
@@ -11,6 +12,9 @@ export const AppHeader = () => {
         <Heading level="1" size="xlarge">
           {intl.formatMessage('appTittel')}
         </Heading>
+        <div>
+          <Varselbjelle />
+        </div>
       </div>
     </header>
   );
