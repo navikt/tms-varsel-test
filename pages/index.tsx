@@ -1,4 +1,3 @@
-import { Attachment, Information } from '@navikt/ds-icons';
 import { Alert, BodyShort, Button, Heading, Link, LinkPanel, Panel } from '@navikt/ds-react';
 import { format } from 'date-fns';
 import { nb } from 'date-fns/locale';
@@ -7,9 +6,7 @@ import { useRouter } from 'next/router';
 import { useMemo } from 'react';
 import { getAccessToken } from '../auth/accessToken';
 import { beskyttetSide } from '../auth/beskyttetSide';
-import { VerticalFlexContainer } from '../components/FlexContainer/VerticalFlexContainer';
 import { Layout } from '../components/Layout/Layout';
-import { PanelWithTopIcon } from '../components/PanelWithTopIcon/PanelWithTopIcon';
 import { Section } from '../components/Section/Section';
 import { useFeatureToggleIntl } from '../hooks/useFeatureToggleIntl';
 import { Dokument, MellomlagretSøknad, Søknad } from '../types/types';
@@ -114,30 +111,6 @@ const Index = ({ søknader, dokumenter, mellomlagredeSøknader }: PageProps) => 
           </div>
         </Section>
       )}
-
-      <Section>
-        <PanelWithTopIcon title={formatMessage('dineOppgaver.tittel')} icon={<Information />}>
-          <BodyShort spacing>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</BodyShort>
-        </PanelWithTopIcon>
-        <PanelWithTopIcon title={formatMessage('hvaGjorVi.tittel')} icon={<Information />}>
-          <BodyShort spacing>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</BodyShort>
-        </PanelWithTopIcon>
-        <PanelWithTopIcon title={formatMessage('dokumentoversikt.tittel')} icon={<Attachment />}>
-          <BodyShort spacing>
-            <Link href="#">{formatMessage('dokumentoversikt.ikkeSynligDokumentLink')}</Link>
-          </BodyShort>
-          <VerticalFlexContainer>
-            {dokumenter.map((dokument) => (
-              <LinkPanel href={dokument.url} border key={dokument.tittel}>
-                <LinkPanel.Title>{dokument.tittel}</LinkPanel.Title>
-                <LinkPanel.Description>
-                  {formatMessage('dokumentoversikt.mottatt')} {formatFullDate(dokument.timestamp)}
-                </LinkPanel.Description>
-              </LinkPanel>
-            ))}
-          </VerticalFlexContainer>
-        </PanelWithTopIcon>
-      </Section>
     </Layout>
   );
 };

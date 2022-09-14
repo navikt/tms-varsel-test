@@ -1,9 +1,8 @@
-import { Alert, BodyShort, Button, Heading, Label } from '@navikt/ds-react';
+import { Alert, BodyShort, Heading, Label } from '@navikt/ds-react';
 import { GetServerSidePropsResult, NextPageContext } from 'next';
-import { FieldErrors, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { getAccessToken } from '../../auth/accessToken';
 import { beskyttetSide } from '../../auth/beskyttetSide';
-import { FormErrorSummary } from '../../components/FormErrorSummary/FormErrorSummary';
 import { FileInput } from '../../components/Inputs/FileInput';
 import { FileUpload } from '../../components/Inputs/FileUpload';
 import PageHeader from '../../components/PageHeader';
@@ -13,10 +12,6 @@ import { OpplastetVedlegg, Vedleggskrav } from '../../types/types';
 import { getVedleggskrav } from '../api/ettersendelse/vedleggskrav';
 import * as styles from './Ettersendelse.module.css';
 
-export const setErrorSummaryFocus = () => {
-  const errorSummaryElement = document && document.getElementById('skjema-feil-liste');
-  if (errorSummaryElement) errorSummaryElement.focus();
-};
 interface PageProps {
   vedleggskrav: Vedleggskrav[];
 }
@@ -61,11 +56,6 @@ const Index = ({ vedleggskrav }: PageProps) => {
           </div>
         </Section>
 
-        <FormErrorSummary
-          id="skjema-feil-liste"
-          errors={errors as FieldErrors}
-          data-testid={'error-summary'}
-        />
         {vedleggskrav.map((krav) => (
           <FileUpload krav={krav} key={krav.dokumentasjonstype} />
         ))}

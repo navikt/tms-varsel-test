@@ -1,8 +1,6 @@
 import '@navikt/ds-css';
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
-import { useEffect } from 'react';
-import { initAmplitude } from '../utils/amplitude';
 import messagesNb from '../translations/nb.json';
 import { IntlProvider } from 'react-intl';
 import { useRouter } from 'next/router';
@@ -45,10 +43,6 @@ export const messages: Messages = {
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const locale = getLocaleOrFallback(router.locale);
-
-  useEffect(() => {
-    initAmplitude();
-  }, []);
 
   return (
     <>
