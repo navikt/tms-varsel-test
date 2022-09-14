@@ -4,7 +4,7 @@ import { Components, Env, fetchDecoratorReact, Props } from '@navikt/nav-dekorat
 const decoratorEnv = process.env.DECORATOR_ENV as Exclude<Env, 'localhost'>;
 
 const decoratorParams: Props = {
-  env: decoratorEnv ?? 'prod',
+  env: decoratorEnv ?? 'dev',
   context: 'privatperson',
   chatbot: false,
   feedback: false,

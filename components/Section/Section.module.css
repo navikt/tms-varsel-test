@@ -17,3 +17,11 @@
 .lightBlueBackground {
   background-color: var(--navds-semantic-color-interaction-primary-hover-subtle);
 }
+
+.lightPinkBackground {
+  background-color: #FFE6E6;
+}
+
+.lightGreenBackground {
+  background-color: var(--navds-global-color-green-100);
+}

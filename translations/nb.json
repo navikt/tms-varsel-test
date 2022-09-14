@@ -1,7 +1,9 @@
 {
   "appTittel": "Test av varsler",
+  "oppgaveTittel": "Oppgave",
+  "innboksTittel": "Innboks",
   "sisteSøknad": {
-    "heading": "Din siste søknad om arbeidsavklaringspenger",
+    "heading": "Beskjed",
     "søknad": {
       "heading": "Søknad om arbeidsavklaringspenger (AAP)",
       "mottatt": "Mottatt {date}",
