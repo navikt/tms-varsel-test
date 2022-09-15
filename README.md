@@ -1,15 +1,10 @@
 # Tms-varsel-test
 
-# Komme i gang
+# Kom i gang
 
-Appen kan kjøres lokalt med å kjøre følgende kommandoer
-
-`yarn` - installere avhengigheter
-`yarn dev` - starte appen
-
-Appen kjører på port 3000 som default
-
----
+1. Installer avhengigheter med `yarn`
+2. Start appen lokalt ved å kjøre `yarn dev`
+3. Appen nås på http://localhost:3000/tms-varsel-test
 
 # Henvendelser
 

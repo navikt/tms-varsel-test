@@ -1,4 +1,4 @@
-import { Button, Select, Textarea, Heading, Panel } from '@navikt/ds-react';
+import { Heading } from '@navikt/ds-react';
 import type { GetServerSidePropsResult, NextPageContext } from 'next';
 import { getAccessToken } from '../auth/accessToken';
 import { beskyttetSide } from '../auth/beskyttetSide';
@@ -6,6 +6,9 @@ import { Layout } from '../components/Layout/Layout';
 import { Section } from '../components/Section/Section';
 import { Beskjed } from '../types/types';
 import { getBeskjeder } from "./api/beskjeder";
+import { BeskjedPanel } from "../components/Panel/BeskjedPanel/BeskjedPanel";
+import { OppgavePanel } from "../components/Panel/OppgavePanel/OppgavePanel";
+import { InnboksPanel } from "../components/Panel/InnboksPanel/InnboksPanel";
 
 interface PageProps {
   beskjeder: Beskjed[];
@@ -19,36 +22,7 @@ const Index = ({ beskjeder }: PageProps) => {
             <Heading level="2" size="medium" spacing>
               Beskjed
             </Heading>
-            <Panel>
-              <div style={{padding: "16px"}}>
-                <Textarea
-                  label="Tekst"
-                  value="Skriv inn tekst"
-                  onChange={() => null}
-                  size="small"
-                />
-              </div>
-              <div style={{padding: "16px"}}>
-                <Textarea
-                  label="Lenke"
-                  value="Skriv inn lenke"
-                  onChange={() => null}
-                  size="small"
-                />
-              </div>
-              <div style={{padding: "16px"}}>
-                <Select
-                  label="Ekstern varsling"
-                  size="medium"
-                >
-                  <option value="false">False</option>
-                  <option value="true">True</option>
-                </Select>
-              </div>
-              <div style={{padding: "16px"}}>
-                <Button variant="secondary">Opprett</Button>
-              </div>
-            </Panel>
+            <BeskjedPanel />
           </div>
         </Section>
       <Section lightPink>
@@ -56,36 +30,7 @@ const Index = ({ beskjeder }: PageProps) => {
           <Heading level="2" size="medium" spacing>
             Oppgave
           </Heading>
-          <Panel>
-            <div style={{padding: "16px"}}>
-              <Textarea
-                label="Tekst"
-                value="Skriv inn tekst"
-                onChange={() => null}
-                size="small"
-              />
-            </div>
-            <div style={{padding: "16px"}}>
-              <Textarea
-                label="Lenke"
-                value="Skriv inn lenke"
-                onChange={() => null}
-                size="small"
-              />
-            </div>
-            <div style={{padding: "16px"}}>
-              <Select
-                label="Ekstern varsling"
-                size="medium"
-              >
-                <option value="false">False</option>
-                <option value="true">True</option>
-              </Select>
-            </div>
-            <div style={{padding: "16px"}}>
-              <Button variant="secondary">Opprett</Button>
-            </div>
-          </Panel>
+          <OppgavePanel />
         </div>
       </Section>
       <Section lightGreen>
@@ -93,36 +38,7 @@ const Index = ({ beskjeder }: PageProps) => {
           <Heading level="2" size="medium" spacing>
             Innboks
           </Heading>
-          <Panel>
-            <div style={{padding: "16px"}}>
-              <Textarea
-                label="Tekst"
-                value="Skriv inn tekst"
-                onChange={() => null}
-                size="small"
-              />
-            </div>
-            <div style={{padding: "16px"}}>
-              <Textarea
-                label="Lenke"
-                value="Skriv inn lenke"
-                onChange={() => null}
-                size="small"
-              />
-            </div>
-            <div style={{padding: "16px"}}>
-              <Select
-                label="Ekstern varsling"
-                size="medium"
-              >
-                <option value="false">False</option>
-                <option value="true">True</option>
-              </Select>
-            </div>
-            <div style={{padding: "16px"}}>
-              <Button variant="secondary">Opprett</Button>
-            </div>
-          </Panel>
+          <InnboksPanel />
         </div>
       </Section>
     </Layout>
