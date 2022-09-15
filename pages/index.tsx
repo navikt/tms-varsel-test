@@ -4,25 +4,20 @@ import { getAccessToken } from '../auth/accessToken';
 import { beskyttetSide } from '../auth/beskyttetSide';
 import { Layout } from '../components/Layout/Layout';
 import { Section } from '../components/Section/Section';
-import { useFeatureToggleIntl } from '../hooks/useFeatureToggleIntl';
-import { Søknad } from '../types/types';
-import { getSøknader } from './api/soknader';
-import {getBeskjeder} from "./api/beskjeder";
+import { Beskjed } from '../types/types';
+import { getBeskjeder } from "./api/beskjeder";
 
 interface PageProps {
-  beskjeder: Søknad[];
-  søknader: Søknad[];
+  beskjeder: Beskjed[];
 }
 
 const Index = ({ beskjeder }: PageProps) => {
-  const { formatMessage } = useFeatureToggleIntl();
-
   return (
     <Layout>
         <Section lightBlue>
           <div>
             <Heading level="2" size="medium" spacing>
-              {formatMessage('sisteSøknad.heading')}
+              Beskjed
             </Heading>
             <Panel>
               <div style={{padding: "16px"}}>
@@ -59,7 +54,7 @@ const Index = ({ beskjeder }: PageProps) => {
       <Section lightPink>
         <div>
           <Heading level="2" size="medium" spacing>
-            {formatMessage('oppgaveTittel')}
+            Oppgave
           </Heading>
           <Panel>
             <div style={{padding: "16px"}}>
@@ -96,7 +91,7 @@ const Index = ({ beskjeder }: PageProps) => {
       <Section lightGreen>
         <div>
           <Heading level="2" size="medium" spacing>
-            {formatMessage('innboksTittel')}
+            Innboks
           </Heading>
           <Panel>
             <div style={{padding: "16px"}}>
@@ -138,7 +133,6 @@ export const getServerSideProps = beskyttetSide(
   async (ctx: NextPageContext): Promise<GetServerSidePropsResult<{}>> => {
 
     const bearerToken = getAccessToken(ctx);
-    const søknader = await getSøknader(bearerToken);
     const beskjeder = await getBeskjeder(bearerToken);
 
     return {

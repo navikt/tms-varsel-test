@@ -1,6 +1,6 @@
 import React, { forwardRef, HTMLAttributes, useMemo } from 'react';
 import { BodyShort, Heading } from '@navikt/ds-react';
-import * as classes from './PageHeader.module.css';
+import * as classes from './SectionHeader.module.css';
 
 export interface PageHeaderProps extends HTMLAttributes<HTMLDivElement> {
   /**
@@ -28,7 +28,7 @@ export interface PageHeaderProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 // eslint-disable-next-line react/display-name
-const PageHeader = forwardRef<HTMLDivElement, PageHeaderProps>(
+const SectionHeader = forwardRef<HTMLDivElement, PageHeaderProps>(
   (
     { children, className, illustration, description, variant = 'guide', align = 'left', ...rest },
     ref
@@ -71,4 +71,4 @@ const PageHeader = forwardRef<HTMLDivElement, PageHeaderProps>(
   }
 );
 
-export default PageHeader;
+export default SectionHeader;
