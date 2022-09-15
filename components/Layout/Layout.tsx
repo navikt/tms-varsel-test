@@ -1,4 +1,4 @@
-import { AppHeader } from '../AppHeader/AppHeader';
+import { Header } from '../Header/Header';
 import styles from './Layout.module.css';
 
 export interface LayoutProps {
@@ -8,7 +8,7 @@ export interface LayoutProps {
 export const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={styles.layout}>
-      <AppHeader />
+      <Header />
       <main className={styles.main}>{children}</main>
     </div>
   );
