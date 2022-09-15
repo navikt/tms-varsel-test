@@ -15,6 +15,16 @@ export interface Søknad {
   missingDocuments: Array<'FOSTERFORELDER' | 'STUDIESTED'>;
 }
 
+export interface Beskjed {
+  uid: string,
+  forstBehandlet: string,
+  eventId: string,
+  tekst: string,
+  link: string | null,
+  sistOppdatert: string,
+  sikkerhetsnivaa: number,
+}
+
 export interface MellomlagretSøknad {
   timestamp: string;
 }

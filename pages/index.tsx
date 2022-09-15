@@ -1,78 +1,95 @@
-import { Alert, BodyShort, Button, Heading, Link, Panel } from '@navikt/ds-react';
+import { Button, Select, Textarea, Heading, Panel } from '@navikt/ds-react';
 import type { GetServerSidePropsResult, NextPageContext } from 'next';
-import { useRouter } from 'next/router';
-import { useMemo } from 'react';
 import { getAccessToken } from '../auth/accessToken';
 import { beskyttetSide } from '../auth/beskyttetSide';
 import { Layout } from '../components/Layout/Layout';
 import { Section } from '../components/Section/Section';
 import { useFeatureToggleIntl } from '../hooks/useFeatureToggleIntl';
-import { Dokument, MellomlagretSøknad, Søknad } from '../types/types';
-import { formatFullDate } from '../utils/date';
-import { getDocuments } from './api/dokumentoversikt';
-import { getMellomlagredeSøknader } from './api/mellomlagredeSoknader';
+import { Søknad } from '../types/types';
 import { getSøknader } from './api/soknader';
+import {getBeskjeder} from "./api/beskjeder";
 
 interface PageProps {
+  beskjeder: Søknad[];
   søknader: Søknad[];
-  dokumenter: Dokument[];
-  mellomlagredeSøknader: MellomlagretSøknad[];
 }
 
-const Index = ({ søknader, dokumenter, mellomlagredeSøknader }: PageProps) => {
+const Index = ({ beskjeder }: PageProps) => {
   const { formatMessage } = useFeatureToggleIntl();
-
-  const router = useRouter();
-
-  const sisteSøknad = useMemo(() => {
-    return søknader[0];
-  }, [søknader]);
-
-  const sisteMellomlagredeSøknad = useMemo(() => {
-    return mellomlagredeSøknader[0];
-  }, [mellomlagredeSøknader]);
 
   return (
     <Layout>
-      {sisteSøknad && (
         <Section lightBlue>
           <div>
             <Heading level="2" size="medium" spacing>
               {formatMessage('sisteSøknad.heading')}
             </Heading>
-            <Panel border>
-              <Heading level="3" size="small">
-                {formatMessage('sisteSøknad.søknad.heading')}
-              </Heading>
-              <BodyShort spacing>
-                {formatMessage('sisteSøknad.søknad.mottatt', {
-                  date: formatFullDate(sisteSøknad.timestamp),
-                })}
-              </BodyShort>
-              <BodyShort spacing>
-                <Link href="#">{formatMessage('sisteSøknad.søknad.saksbehandlingstid')}</Link>
-              </BodyShort>
+            <Panel>
+              <div style={{padding: "16px"}}>
+                <Textarea
+                  label="Tekst"
+                  value="Skriv inn tekst"
+                  onChange={() => null}
+                  size="small"
+                />
+              </div>
+              <div style={{padding: "16px"}}>
+                <Textarea
+                  label="Lenke"
+                  value="Skriv inn lenke"
+                  onChange={() => null}
+                  size="small"
+                />
+              </div>
+              <div style={{padding: "16px"}}>
+                <Select
+                  label="Ekstern varsling"
+                  size="medium"
+                >
+                  <option value="false">False</option>
+                  <option value="true">True</option>
+                </Select>
+              </div>
+              <div style={{padding: "16px"}}>
+                <Button variant="secondary">Opprett</Button>
+              </div>
             </Panel>
           </div>
         </Section>
-      )}
       <Section lightPink>
         <div>
           <Heading level="2" size="medium" spacing>
             {formatMessage('oppgaveTittel')}
           </Heading>
-          <Panel border>
-            <Heading level="3" size="small">
-              {formatMessage('sisteSøknad.søknad.heading')}
-            </Heading>
-            <BodyShort spacing>
-              {formatMessage('sisteSøknad.søknad.mottatt', {
-                date: formatFullDate(sisteSøknad.timestamp),
-              })}
-            </BodyShort>
-            <BodyShort spacing>
-              <Link href="#">{formatMessage('sisteSøknad.søknad.saksbehandlingstid')}</Link>
-            </BodyShort>
+          <Panel>
+            <div style={{padding: "16px"}}>
+              <Textarea
+                label="Tekst"
+                value="Skriv inn tekst"
+                onChange={() => null}
+                size="small"
+              />
+            </div>
+            <div style={{padding: "16px"}}>
+              <Textarea
+                label="Lenke"
+                value="Skriv inn lenke"
+                onChange={() => null}
+                size="small"
+              />
+            </div>
+            <div style={{padding: "16px"}}>
+              <Select
+                label="Ekstern varsling"
+                size="medium"
+              >
+                <option value="false">False</option>
+                <option value="true">True</option>
+              </Select>
+            </div>
+            <div style={{padding: "16px"}}>
+              <Button variant="secondary">Opprett</Button>
+            </div>
           </Panel>
         </div>
       </Section>
@@ -81,18 +98,35 @@ const Index = ({ søknader, dokumenter, mellomlagredeSøknader }: PageProps) => 
           <Heading level="2" size="medium" spacing>
             {formatMessage('innboksTittel')}
           </Heading>
-          <Panel border>
-            <Heading level="3" size="small">
-              {formatMessage('sisteSøknad.søknad.heading')}
-            </Heading>
-            <BodyShort spacing>
-              {formatMessage('sisteSøknad.søknad.mottatt', {
-                date: formatFullDate(sisteSøknad.timestamp),
-              })}
-            </BodyShort>
-            <BodyShort spacing>
-              <Link href="#">{formatMessage('sisteSøknad.søknad.saksbehandlingstid')}</Link>
-            </BodyShort>
+          <Panel>
+            <div style={{padding: "16px"}}>
+              <Textarea
+                label="Tekst"
+                value="Skriv inn tekst"
+                onChange={() => null}
+                size="small"
+              />
+            </div>
+            <div style={{padding: "16px"}}>
+              <Textarea
+                label="Lenke"
+                value="Skriv inn lenke"
+                onChange={() => null}
+                size="small"
+              />
+            </div>
+            <div style={{padding: "16px"}}>
+              <Select
+                label="Ekstern varsling"
+                size="medium"
+              >
+                <option value="false">False</option>
+                <option value="true">True</option>
+              </Select>
+            </div>
+            <div style={{padding: "16px"}}>
+              <Button variant="secondary">Opprett</Button>
+            </div>
           </Panel>
         </div>
       </Section>
@@ -105,11 +139,10 @@ export const getServerSideProps = beskyttetSide(
 
     const bearerToken = getAccessToken(ctx);
     const søknader = await getSøknader(bearerToken);
-    const dokumenter = await getDocuments();
-    const mellomlagredeSøknader = await getMellomlagredeSøknader();
+    const beskjeder = await getBeskjeder(bearerToken);
 
     return {
-      props: { søknader, dokumenter, mellomlagredeSøknader },
+      props: { beskjeder },
     };
   }
 );
