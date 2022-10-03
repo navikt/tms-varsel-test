@@ -25,16 +25,8 @@ spec:
       memory: 256Mi
     limits:
       memory: 256Mi
-  idporten:
-    enabled: true
-    sidecar:
-      enabled: true
-      autoLogin: true
-      level: Level4
   ingresses:
     - "https://www.dev.nav.no/tms-varsel-test"
-  tokenx:
-    enabled: true
   accessPolicy:
     outbound:
       rules:
