@@ -2,12 +2,15 @@ import { Button, Panel, Select, Textarea } from '@navikt/ds-react';
 import { useState } from "react";
 import { post } from "../../../lib/api/post";
 import { toBoolean } from "../../../lib/utils/string";
+import { useConfetti } from "../../../lib/hooks/useConfetti";
+import ReactConfetti from "react-confetti";
 import styles from "./OppgavePanel.module.css";
 
 export const OppgavePanel = () => {
   const [tekst, setTekst] = useState("Skriv inn tekst");
   const [lenke, setLenke] = useState("Skriv inn lenke");
   const [eksternVarsling, setEksternVarsling] = useState("false");
+  const [confetti, renderConfetti] = useConfetti();
 
   const createOppgave = async () => {
     await post("innboks", {
@@ -15,10 +18,13 @@ export const OppgavePanel = () => {
       link: lenke,
       eksternVarsling: toBoolean(eksternVarsling),
     });
+
+    await renderConfetti();
   };
 
   return (
     <Panel>
+      {confetti ? <ReactConfetti /> : null}
       <div className={styles.content}>
         <Textarea
           label="Tekst"
