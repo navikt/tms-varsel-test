@@ -1,7 +1,8 @@
 import { Button, Panel, Select, Textarea } from '@navikt/ds-react';
 import { useState } from "react";
-import styles from "./OppgavePanel.module.css";
 import { post } from "../../../lib/api/post";
+import { toBoolean } from "../../../lib/utils/string";
+import styles from "./OppgavePanel.module.css";
 
 export const OppgavePanel = () => {
   const [tekst, setTekst] = useState("Skriv inn tekst");
@@ -12,7 +13,7 @@ export const OppgavePanel = () => {
     await post("innboks", {
       tekst: tekst,
       link: lenke,
-      eksternVarsling: eksternVarsling,
+      eksternVarsling: toBoolean(eksternVarsling),
     });
   };
 

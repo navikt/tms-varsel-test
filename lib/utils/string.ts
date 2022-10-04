@@ -4,3 +4,5 @@ export const getStringFromPossiblyArrayQuery = (query: string | string[] | undef
   }
   return query;
 };
+
+export const toBoolean = (value: string): boolean => (/true/i).test(value);
