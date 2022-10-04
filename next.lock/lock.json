@@ -1,0 +1,7 @@
+{
+  "https://cdn.skypack.dev/-/object-assign@v4.1.1-LbCnB3r2y2yFmhmiCfPn/dist=es2019,mode=imports/optimized/object-assign.js": { "integrity": "sha512-PDkEgBVEnNNtSmSlVHUOX1hnHnL+VTaoQWg8t78RcCInNwWJQ7V0ollT+M7HScHq1BukvJxGluC0UZMOthyKtw==", "contentType": "application/javascript; charset=utf-8" },
+  "https://cdn.skypack.dev/-/react-confetti@v6.1.0-dNGR1x95YFccuKDfzIxo/dist=es2019,mode=imports/optimized/react-confetti.js": { "integrity": "sha512-XmD2OEhsslpnb55l3ABdcA9gFvunNzl6sd1FZpalC9nEEwZAqw6EjsmF1MViunzG80xFH4zldB+3gJqUhcfa3g==", "contentType": "application/javascript; charset=utf-8" },
+  "https://cdn.skypack.dev/-/react@v17.0.1-yH0aYV1FOvoIPeKBbHxg/dist=es2019,mode=imports/optimized/react.js": { "integrity": "sha512-Oe0vHmrMutaQNX76TDeyAJPYltX3aiC5m6hCofxIb8t5AuXWr5Z7W0cz+9yy+44K09z+JIpe8E+M9UTwTQ5Khg==", "contentType": "application/javascript; charset=utf-8" },
+  "https://cdn.skypack.dev/react-confetti": { "integrity": "sha512-YY0jr3hvc+mLMsQFqneyp88rtBs0S6oFxHpitfXRK2sVMZyM1zs+bkvd1eZiGUafLrsLknXnTTJLGqTnRsHQYw==", "contentType": "application/javascript; charset=utf-8" },
+  "version": 1
+}
