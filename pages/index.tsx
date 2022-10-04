@@ -10,7 +10,6 @@ import { fetcher } from "../lib/api/fetcher";
 
 const Index = () => {
   const { data: status } = useSwr("https://person.dev.nav.no/tms-event-test-producer/login/status", fetcher);
-  const { data } = useSwr("https://person.dev.nav.no/tms-event-test-producer/test", fetcher);
 
   if (typeof window !== "undefined") {
     if (status && status.authenticated === false) {

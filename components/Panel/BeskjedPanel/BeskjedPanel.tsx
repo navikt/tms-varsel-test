@@ -1,22 +1,18 @@
-import {Button, Panel, Select, Textarea} from '@navikt/ds-react';
+import { Button, Panel, Select, Textarea } from '@navikt/ds-react';
 import { useState } from "react";
 import styles from "./BeskjedPanel.module.css";
+import { post } from "../../../lib/api/post";
 
 export const BeskjedPanel = () => {
   const [tekst, setTekst] = useState("Skriv inn tekst");
   const [lenke, setLenke] = useState("Skriv inn lenke");
+  const [eksternVarsling, setEksternVarsling] = useState("false");
 
-  const createBeskjed = async () => {
-    await fetch("/api/beskjed", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-type": "application/json"
-      },
-      body: JSON.stringify({
-        tekst,
-        lenke,
-      }),
+  const createBekjed = async () => {
+    await post("beskjed", {
+      tekst: tekst,
+      link: lenke,
+      eksternVarsling: eksternVarsling,
     });
   };
 
@@ -42,13 +38,14 @@ export const BeskjedPanel = () => {
         <Select
           label="Ekstern varsling"
           size="medium"
+          onChange={(e) => setEksternVarsling(e.target.value)}
         >
           <option value="false">False</option>
           <option value="true">True</option>
         </Select>
       </div>
       <div className={styles.content}>
-        <Button variant="secondary">Opprett</Button>
+        <Button variant="secondary" onClick={createBekjed}>Opprett</Button>
       </div>
     </Panel>
   );
