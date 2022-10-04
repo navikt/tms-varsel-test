@@ -1,4 +1,6 @@
-export const post = (type: string, content: object) => fetch(`https://person.dev.nav.no/tms-event-test-producer/produce/${type}`, {
+import {eventTestProducerUrl} from "../urls";
+
+export const post = (type: string, content: object) => fetch(`${eventTestProducerUrl}/produce/${type}`, {
   method: "POST",
   credentials: "include",
   headers: {

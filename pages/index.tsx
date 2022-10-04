@@ -7,14 +7,15 @@ import { OppgavePanel } from "../components/Panel/OppgavePanel/OppgavePanel";
 import { InnboksPanel } from "../components/Panel/InnboksPanel/InnboksPanel";
 import { redirectToIdPorten } from "../lib/api/redirect";
 import { fetcher } from "../lib/api/fetcher";
+import { statusUrl }  from "../lib/urls";
+import { isBrowser } from "../lib/utils/environments";
 
 const Index = () => {
-  const { data: status } = useSwr("https://person.dev.nav.no/tms-event-test-producer/login/status", fetcher);
+  const { data: status } = useSwr(statusUrl, fetcher);
 
-  if (typeof window !== "undefined") {
+  if (isBrowser) {
     if (status && status.authenticated === false) {
-      redirectToIdPorten("https://www.dev.nav.no/tms-varsel-test");
-      return null;
+      redirectToIdPorten();
     }
   }
 
