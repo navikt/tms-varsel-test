@@ -1,9 +1,9 @@
 import { Button, Panel, Select, Textarea } from '@navikt/ds-react';
 import { useState } from "react";
+import ReactConfetti from "https://cdn.skypack.dev/react-confetti";
 import { post } from "../../../lib/api/post";
 import { toBoolean } from "../../../lib/utils/string";
 import { useConfetti } from "../../../lib/hooks/useConfetti";
-import ReactConfetti from "react-confetti";
 import styles from "./BeskjedPanel.module.css";
 
 export const BeskjedPanel = () => {

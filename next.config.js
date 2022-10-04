@@ -11,10 +11,12 @@ const nextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
   output: 'standalone',
-
   i18n: {
     locales: ['nb'],
     defaultLocale: 'nb',
+  },
+  experimental: {
+    urlImports: ['https://cdn.skypack.dev'],
   },
 };
 
