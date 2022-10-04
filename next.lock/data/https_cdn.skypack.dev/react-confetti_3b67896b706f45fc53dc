@@ -1,0 +1,16 @@
+/*
+ * Skypack CDN - react-confetti@6.1.0
+ *
+ * Learn more:
+ *   📙 Package Documentation: https://www.skypack.dev/view/react-confetti
+ *   📘 Skypack Documentation: https://www.skypack.dev/docs
+ *
+ * Pinned URL: (Optimized for Production)
+ *   ▶️ Normal: https://cdn.skypack.dev/pin/react-confetti@v6.1.0-dNGR1x95YFccuKDfzIxo/mode=imports/optimized/react-confetti.js
+ *   ⏩ Minified: https://cdn.skypack.dev/pin/react-confetti@v6.1.0-dNGR1x95YFccuKDfzIxo/mode=imports,min/optimized/react-confetti.js
+ *
+ */
+
+// Browser-Optimized Imports (Don't directly import the URLs below in your application!)
+export * from '/-/react-confetti@v6.1.0-dNGR1x95YFccuKDfzIxo/dist=es2019,mode=imports/optimized/react-confetti.js';
+export {default} from '/-/react-confetti@v6.1.0-dNGR1x95YFccuKDfzIxo/dist=es2019,mode=imports/optimized/react-confetti.js';
