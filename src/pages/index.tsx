@@ -14,7 +14,7 @@ const Index = () => {
   const { data: status } = useSwr(statusUrl, fetcher);
 
   if (isBrowser) {
-    if (status && status.authenticated === false) {
+    if (status && !status.authenticated) {
       redirectToIdPorten();
     }
   }
