@@ -1,3 +1,8 @@
 .content {
   padding: 16px;
 }
+
+.beskjedpanel {
+  padding: 2rem;
+  border-radius: 8px;
+}

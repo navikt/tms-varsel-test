@@ -23,7 +23,7 @@ export const InnboksPanel = () => {
   };
 
   return (
-    <Panel>
+    <Panel className={styles.innbokspanel}>
       {confetti ? <ReactConfetti /> : null}
       <div className={styles.content}>
         <Textarea

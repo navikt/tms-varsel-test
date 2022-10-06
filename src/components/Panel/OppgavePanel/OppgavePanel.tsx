@@ -23,7 +23,7 @@ export const OppgavePanel = () => {
   };
 
   return (
-    <Panel>
+    <Panel className={styles.oppgavedpanel}>
       {confetti ? <ReactConfetti /> : null}
       <div className={styles.content}>
         <Textarea

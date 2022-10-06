@@ -37,7 +37,7 @@ const Index = () => {
           <OppgavePanel />
         </div>
       </Section>
-      <Section lightGreen>
+      <Section lightGray>
         <div>
           <Heading level="2" size="medium" spacing>
             Innboks

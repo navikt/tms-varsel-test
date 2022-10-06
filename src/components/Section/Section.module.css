@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 4rem;
+  border-radius: 8px;
 }
 
 .container {
@@ -22,6 +23,6 @@
   background-color: #FFE6E6;
 }
 
-.lightGreenBackground {
-  background-color: var(--navds-global-color-green-100);
+.lightGrayBackground {
+  background-color: #F1F1F1;
 }
