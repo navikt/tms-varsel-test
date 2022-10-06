@@ -12,7 +12,7 @@ type EnvUrl = { development: string; production: string };
 
 const STATUS_URL: EnvUrl = {
   development: "https://localhost:3000/tms-varsel-test/api/status",
-  production: "https://www.dev.nav.no/dittnav-api/logins/status",
+  production: "https://www.dev.nav.no/dittnav-api/login/status",
 };
 
 const EVENT_TEST_PRODUCER_URL: EnvUrl = {
