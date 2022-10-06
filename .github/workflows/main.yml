@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - "main"
-      - "esm-confetti"
+      - "msw"
 env:
   "IMAGE": "ghcr.io/${{ github.repository }}:${{ github.sha }}"
 jobs:
