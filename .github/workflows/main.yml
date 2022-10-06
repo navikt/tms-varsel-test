@@ -33,8 +33,6 @@ jobs:
         run: cp .nais/dev.env .env.local
       - name: "Print env"
         run: cat .env.local
-      - name: "client tests"
-        run: "yarn test"
       - name: "Bygg klient(yarn run build)"
         run: "yarn run build"
       - name: "Set up Docker Buildx"
