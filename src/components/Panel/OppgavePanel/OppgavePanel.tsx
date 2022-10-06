@@ -3,7 +3,7 @@ import ReactConfetti from "https://cdn.skypack.dev/react-confetti";
 import { useState } from "react";
 import { post } from "../../../lib/api/post";
 import { toBoolean } from "../../../lib/utils/string";
-import { useConfetti } from "../../../lib/hooks/useConfetti";
+import { useConfetti } from "../../../hooks/useConfetti";
 import styles from "./OppgavePanel.module.css";
 
 export const OppgavePanel = () => {
