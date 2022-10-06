@@ -1,10 +1,8 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
-import { Components, Env, fetchDecoratorReact, Props } from '@navikt/nav-dekoratoren-moduler/ssr';
-
-const decoratorEnv = process.env.DECORATOR_ENV as Exclude<Env, 'localhost'>;
+import { Components, fetchDecoratorReact, Props } from '@navikt/nav-dekoratoren-moduler/ssr';
 
 const decoratorParams: Props = {
-  env: decoratorEnv ?? 'dev',
+  env: 'dev',
   context: 'privatperson',
   chatbot: false,
   feedback: false,
