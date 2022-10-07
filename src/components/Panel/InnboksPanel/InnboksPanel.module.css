@@ -6,3 +6,15 @@
   padding: 2rem;
   border-radius: 8px;
 }
+
+@media screen and (max-width: 720px) {
+  .innbokspanel {
+    padding: 1rem;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .innbokspanel {
+    padding: 0.25rem;
+  }
+}

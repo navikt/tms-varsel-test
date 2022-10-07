@@ -26,3 +26,15 @@
 .lightGrayBackground {
   background-color: #F1F1F1;
 }
+
+@media screen and (max-width: 720px) {
+  .section {
+    padding: 2rem;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .section {
+    padding: 1rem;
+  }
+}
