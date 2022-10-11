@@ -17,6 +17,7 @@ export const BeskjedPanel = () => {
       tekst: tekst,
       link: lenke,
       eksternVarsling: toBoolean(eksternVarsling),
+      synligFremTil: null,
     });
 
     await renderConfetti();

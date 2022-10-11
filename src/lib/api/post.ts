@@ -9,7 +9,6 @@ export const post = (type: string, content: object) => fetch(`${eventTestProduce
   },
   body: JSON.stringify({
     grupperingsid: "12345678",
-    synligFremTil: null,
     epostVarslingstekst: null,
     epostVarslingstittel: null,
     smsVarslingstekst: null,
