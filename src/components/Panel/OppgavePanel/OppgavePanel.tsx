@@ -13,7 +13,7 @@ export const OppgavePanel = () => {
   const [confetti, renderConfetti] = useConfetti();
 
   const createOppgave = async () => {
-    await post("innboks", {
+    await post("oppgave", {
       tekst: tekst,
       link: lenke,
       eksternVarsling: toBoolean(eksternVarsling),
