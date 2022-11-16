@@ -1,7 +1,7 @@
 import { Button, Panel, Select, Textarea } from '@navikt/ds-react';
 import ReactConfetti from "https://cdn.skypack.dev/react-confetti";
 import { useState } from "react";
-import { post } from "../../../lib/api/post";
+import { postVarsel } from "../../../lib/api/postVarsel";
 import { toBoolean } from "../../../lib/utils/string";
 import { useConfetti } from "../../../hooks/useConfetti";
 import styles from "./OppgavePanel.module.css";
@@ -13,7 +13,7 @@ export const OppgavePanel = () => {
   const [confetti, renderConfetti] = useConfetti();
 
   const createOppgave = async () => {
-    await post("oppgave", {
+    await postVarsel("oppgave", {
       tekst: tekst,
       link: lenke,
       eksternVarsling: toBoolean(eksternVarsling),

@@ -9,6 +9,7 @@ import { redirectToIdPorten } from "../lib/api/redirect";
 import { fetcher } from "../lib/api/fetcher";
 import { statusUrl }  from "../lib/urls";
 import { isBrowser } from "../lib/utils/environments";
+import {UtkastPanel} from "../components/Panel/UtkastPanel/UtkastPanel";
 
 const Index = () => {
   const { data: status } = useSwr(statusUrl, fetcher);
@@ -43,6 +44,14 @@ const Index = () => {
             Innboks
           </Heading>
           <InnboksPanel />
+        </div>
+      </Section>
+      <Section lightBlue>
+        <div>
+          <Heading level="2" size="medium" spacing>
+            Utkast
+          </Heading>
+          <UtkastPanel />
         </div>
       </Section>
     </Layout>

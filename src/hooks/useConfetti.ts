@@ -11,3 +11,15 @@ export const useConfetti = (): [boolean, Function] => {
 
   return [confetti, renderConfetti];
 };
+
+export const useShortConfetti = (): [boolean, Function] => {
+  const [confetti, setConfetti] = useState(false);
+
+  const renderConfetti = async () => {
+    setConfetti(true);
+    await new Promise(r => setTimeout(r, 2000));
+    setConfetti(false);
+  }
+
+  return [confetti, renderConfetti];
+};

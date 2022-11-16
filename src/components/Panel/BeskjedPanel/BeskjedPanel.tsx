@@ -1,7 +1,7 @@
 import { Button, Panel, Select, Textarea } from '@navikt/ds-react';
 import { useState } from "react";
 import ReactConfetti from "https://cdn.skypack.dev/react-confetti";
-import { post } from "../../../lib/api/post";
+import { postVarsel } from "../../../lib/api/postVarsel";
 import { toBoolean } from "../../../lib/utils/string";
 import { useConfetti } from "../../../hooks/useConfetti";
 import styles from "./BeskjedPanel.module.css";
@@ -13,7 +13,7 @@ export const BeskjedPanel = () => {
   const [confetti, renderConfetti] = useConfetti();
 
   const createBekjed = async () => {
-    await post("beskjed", {
+    await postVarsel("beskjed", {
       tekst: tekst,
       link: lenke,
       eksternVarsling: toBoolean(eksternVarsling),
