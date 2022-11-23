@@ -8,13 +8,13 @@ import styles from "./UtkastPanel.module.css";
 export const UtkastPanel = () => {
   const [tittel, setTittel] = useState("Skriv inn tekst");
   const [lenke, setLenke] = useState("Skriv inn lenke");
-  const [eventId, setEventId] = useState("Skriv inn eventId");
+  const [utkastId, setUtkastId] = useState("Skriv inn utkastId");
   const [confetti, renderConfetti] = useConfetti();
   const [shortConfetti, renderShortConfetti] = useShortConfetti();
 
   const createUtkast = async () => {
     await postUtkast("create", {
-      eventId: eventId,
+      utkastId: utkastId,
       tittel: tittel,
       link: lenke,
     });
@@ -24,7 +24,7 @@ export const UtkastPanel = () => {
 
   const updateUtkast = async () => {
     await postUtkast("update", {
-      eventId: eventId,
+      utkastId: utkastId,
       tittel: tittel,
       link: lenke,
     });
@@ -34,7 +34,7 @@ export const UtkastPanel = () => {
 
   const deleteUtkast = async () => {
     await postUtkast("delete", {
-      eventId: eventId
+      utkastId: utkastId
     });
 
     await renderShortConfetti();
@@ -43,13 +43,13 @@ export const UtkastPanel = () => {
   const generateUUID = async () => {
       await get("uuid/generate")
           .then(value => value.text())
-          .then(uuid => setEventId(uuid))
+          .then(uuid => setUtkastId(uuid))
   }
 
   const generateULID = async () => {
       await get("ulid/generate")
           .then(value => value.text())
-          .then(ulid => setEventId(ulid))
+          .then(ulid => setUtkastId(ulid))
   }
 
   return (
@@ -57,9 +57,9 @@ export const UtkastPanel = () => {
       {confetti ? <ReactConfetti /> : null}
       <div className={styles.content}>
         <Textarea
-          label="EventId"
-          value={eventId}
-          onChange={e => setEventId(e.target.value)}
+          label="UtkastId"
+          value={utkastId}
+          onChange={e => setUtkastId(e.target.value)}
           size="small"
         />
           <Button variant="secondary" onClick={generateUUID}>UUID</Button>
