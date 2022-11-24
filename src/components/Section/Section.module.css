@@ -27,6 +27,10 @@
   background-color: #F1F1F1;
 }
 
+.lightGreenBackground {
+  background-color: var(--navds-global-color-green-100);
+}
+
 @media screen and (max-width: 720px) {
   .section {
     padding: 2rem;

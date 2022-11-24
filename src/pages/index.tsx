@@ -46,7 +46,7 @@ const Index = () => {
           <InnboksPanel />
         </div>
       </Section>
-      <Section lightBlue>
+      <Section lightGreen>
         <div>
           <Heading level="2" size="medium" spacing>
             Utkast

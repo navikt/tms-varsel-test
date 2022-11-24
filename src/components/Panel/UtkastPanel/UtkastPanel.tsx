@@ -62,8 +62,10 @@ export const UtkastPanel = () => {
           onChange={e => setUtkastId(e.target.value)}
           size="small"
         />
+        <div className={styles.buttons}>
           <Button variant="secondary" onClick={generateUUID}>UUID</Button>
           <Button variant="secondary" onClick={generateULID}>ULID</Button>
+        </div>
       </div>
       <div className={styles.content}>
           <Textarea
@@ -80,11 +82,11 @@ export const UtkastPanel = () => {
           onChange={e => setLenke(e.target.value)}
           size="small"
         />
-      </div>
-      <div className={styles.content}>
-        <Button variant="secondary" onClick={createUtkast}>Opprett</Button>
-        <Button variant="secondary" onClick={updateUtkast}>Oppdater</Button>
-        <Button variant="secondary" onClick={deleteUtkast}>Slett</Button>
+        <div className={styles.buttons}>
+          <Button variant="secondary" onClick={createUtkast}>Opprett</Button>
+          <Button variant="secondary" onClick={updateUtkast}>Oppdater</Button>
+          <Button variant="secondary" onClick={deleteUtkast}>Slett</Button>
+        </div>
       </div>
     </Panel>
   );

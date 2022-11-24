@@ -1,5 +1,12 @@
 .content {
-  padding: 16px;
+  padding: 1rem;
+}
+
+.buttons {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  gap: 1.45em;
 }
 
 .utkastpanel {
