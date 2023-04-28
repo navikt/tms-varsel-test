@@ -26,7 +26,7 @@ spec:
     limits:
       memory: 256Mi
   ingresses:
-    - "https://www.dev.nav.no/tms-varsel-test"
+    - "https://www.intern.dev.nav.no/tms-varsel-test"
   accessPolicy:
     outbound:
       rules:

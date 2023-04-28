@@ -22,6 +22,14 @@ const Index = () => {
 
   return (
     <Layout>
+      <Section lightGreen>
+        <div>
+          <Heading level="2" size="medium" spacing>
+            Utkast
+          </Heading>
+          <UtkastPanel />
+        </div>
+      </Section>
         <Section lightBlue>
           <div>
             <Heading level="2" size="medium" spacing>
@@ -44,14 +52,6 @@ const Index = () => {
             Innboks
           </Heading>
           <InnboksPanel />
-        </div>
-      </Section>
-      <Section lightGreen>
-        <div>
-          <Heading level="2" size="medium" spacing>
-            Utkast
-          </Heading>
-          <UtkastPanel />
         </div>
       </Section>
     </Layout>

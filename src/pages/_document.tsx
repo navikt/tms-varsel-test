@@ -7,8 +7,8 @@ const decoratorParams: Props = {
   chatbot: false,
   feedback: false,
   breadcrumbs: [
-    { url: `https://www.dev.nav.no/minside/`, title: "Min side" },
-    { url: `https://www.dev.nav.no/tms-varsel-test`, title: `Test av varsler` },
+    { url: `https://www.intern.dev.nav.no/minside/`, title: "Min side" },
+    { url: `https://www.intern.dev.nav.no/tms-varsel-test`, title: `Test av varsler` },
   ],
 };
 
