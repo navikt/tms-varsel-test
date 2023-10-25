@@ -1,23 +1,29 @@
-import { isProduction } from "./utils/environments";
+import { isDevelopment, isLocal } from "./utils/environments";
 
-export const getEnvironment = (): "production" | "development" => {
-  if (isProduction()) {
-    return "production";
+export const getEnvironment = (): "local"|  "production" | "development" => {
+  if (isLocal()) {
+    return "local";
   }
 
-  return "development";
+  if (isDevelopment()) {
+    return "development";
+  }
+
+  return "production";
 };
 
-type EnvUrl = { development: string; production: string };
+type EnvUrl = { local:string; development: string; production: string };
 
 const STATUS_URL: EnvUrl = {
-  development: "https://localhost:3000/tms-varsel-test/api/status",
-  production: "https://www.intern.dev.nav.no/tms-event-test-producer/login/status",
+  local: "https://localhost:3000/tms-varsel-test/api/status",
+  development: "https://www.intern.dev.nav.no/tms-event-test-producer/login/status",
+  production: "https://www.nav.no/tms-event-test-producer/login/status",
 };
 
 const EVENT_TEST_PRODUCER_URL: EnvUrl = {
-  development: "https://localhost:3000/tms-varsel-test/api",
-  production: "https://www.intern.dev.nav.no/tms-event-test-producer",
+  local: "https://localhost:3000/tms-varsel-test/api",
+  development: "https://www.intern.dev.nav.no/tms-event-test-producer",
+  production: "https://www.nav.no/tms-event-test-producer",
 };
 
 export const statusUrl = STATUS_URL[getEnvironment()];

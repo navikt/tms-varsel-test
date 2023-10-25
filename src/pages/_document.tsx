@@ -1,8 +1,9 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document';
 import { Components, fetchDecoratorReact, Props } from '@navikt/nav-dekoratoren-moduler/ssr';
+import { getDecoratorEnvironment } from "../lib/utils/environment.server";
 
 const decoratorParams: Props = {
-  env: 'dev',
+  env: getDecoratorEnvironment(),
   context: 'privatperson',
   chatbot: false,
   feedback: false,
