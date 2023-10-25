@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - "main"
-      - "msw"
+      - "prod-deploy"
 env:
   "IMAGE": "ghcr.io/${{ github.repository }}:${{ github.sha }}"
 jobs:
@@ -53,8 +53,8 @@ jobs:
           push: "true"
           cache-from: "type=gha"
           cache-to: "type=gha,mode=max"
-  "deployAppToDev":
-    name: "Deploy app to dev"
+  deploy-dev:
+    name: "Deploy to dev"
     needs: "build"
     runs-on: "ubuntu-latest"
     steps:
@@ -64,4 +64,17 @@ jobs:
         env:
           "APIKEY": "${{ secrets.NAIS_DEPLOY_APIKEY }}"
           "CLUSTER": "dev-gcp"
-          "RESOURCE": ".nais/nais.yaml"
+          "RESOURCE": ".nais/dev/nais.yaml"
+  deploy-prod:
+    if: github.ref == 'refs/heads/main'
+    name: "Deploy to prod"
+    needs: "build"
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v2"
+      - name: "Deploy to DEV"
+        uses: "nais/deploy/actions/deploy@v1"
+        env:
+          "APIKEY": "${{ secrets.NAIS_DEPLOY_APIKEY }}"
+          "CLUSTER": "prod-gcp"
+          "RESOURCE": ".nais/prod/nais.yaml"
